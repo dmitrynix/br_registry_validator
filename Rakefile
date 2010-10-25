@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = 'Validator for CPF and CNPJ'
   gem.email = 'dmitry.nix@gmail.com'
   gem.authors = ['Dmitry Nix']
-  gem.version = '0.0.1'
+  gem.version = '0.0.2'
   gem.homepage = "http://github.com/dmitrynix/br_registry_validator"
   gem.add_development_dependency "rspec", "~> 2.0.0"
   gem.add_development_dependency "bundler", "~> 1.0.0"

@@ -5,13 +5,28 @@
 
 Gem::Specification.new do |s|
   s.name = %q{br_registry_validator}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dmitry Nix"]
-  s.date = %q{2010-10-22}
+  s.date = %q{2010-10-24}
   s.description = %q{Validator for CPF and CNPJ}
   s.email = %q{dmitry.nix@gmail.com}
+  s.files = [
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "br_registry_validator.gemspec",
+    "init.rb",
+    "lib/br_registry_validator.rb",
+    "lib/documents/cnpj.rb",
+    "lib/documents/cpf.rb",
+    "lib/validators/cnpj_validator.rb",
+    "lib/validators/cpf_validator.rb",
+    "spec/documents/cnpj_spec.rb",
+    "spec/documents/cpf_spec.rb",
+    "spec/spec_helper.rb"
+  ]
   s.homepage = %q{http://github.com/dmitrynix/br_registry_validator}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
@@ -19,7 +34,11 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/documents/cnpj_spec.rb",
     "spec/documents/cpf_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/support/customer.rb",
+    "spec/support/supplier.rb",
+    "spec/validators/cnpj_spec.rb",
+    "spec/validators/cpf_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -27,7 +46,8 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["= 3.0.1"])
+      s.add_runtime_dependency(%q<activerecord>, [">= 0"])
+      s.add_development_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.0.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
@@ -37,7 +57,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["= 3.0.1"])
+      s.add_dependency(%q<activerecord>, [">= 0"])
+      s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.0.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
@@ -48,7 +69,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rcov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["= 3.0.1"])
+    s.add_dependency(%q<activerecord>, [">= 0"])
+    s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.0.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])

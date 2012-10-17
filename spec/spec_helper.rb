@@ -1,7 +1,7 @@
 require 'active_record'
-require 'init'
+require File.dirname(__FILE__) + '/../init'
 
-Dir["spec/support/**/*.rb"].each {|f| require f}
+Dir[File.dirname(__FILE__)+"/support/**/*.rb"].each {|f| require f}
 
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => ':memory:'
 

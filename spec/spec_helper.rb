@@ -1,7 +1,7 @@
 require 'active_record'
-require 'init'
+require 'br_registry_validator'
 
-Dir["spec/support/**/*.rb"].each {|f| require f}
+Dir["./spec/support/**/*.rb"].each {|file| require file }
 
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => ':memory:'
 
